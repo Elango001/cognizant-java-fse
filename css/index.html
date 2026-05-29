@@ -3,124 +3,27 @@
   <head>
     <title>Local Community Event Portal</title>
     <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      #welcomeBanner {
-        background-color: blue;
-        color: white;
-        margin: 5px;
-        padding: 10px 5px;
-        text-align: justify;
-        font-size: larger;
-      }
-      .highlight {
-        background-color: yellow;
-        font-weight: bold;
-        color: #333;
-      }
-      .gallery {
-        border: 2px solid black;
-        width: 300px;
-        height: 200px;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-      }
-      .gallery.enlarged {
-        transform: scale(2);
-        z-index: 10;
-        position: relative;
-      }
-      #registrationForm {
-        display: flex;
-        flex-direction: column;
-        max-width: 400px;
-        gap: 8px;
-        padding: 16px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        background-color: #f9f9f9;
-        margin: 10px 0;
-      }
-      #registrationForm input,
-      #registrationForm select,
-      #registrationForm textarea {
-        padding: 8px;
-        border: 1px solid #aaa;
-        border-radius: 4px;
-        font-size: 14px;
-      }
-      #registrationForm button {
-        padding: 10px;
-        background-color: #2563eb;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 15px;
-      }
-      #feedbackForm {
-        display: flex;
-        flex-direction: column;
-        max-width: 400px;
-        gap: 8px;
-        padding: 16px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        background-color: #f9f9f9;
-        margin: 10px 0;
-      }
-      #feedbackForm input,
-      #feedbackForm select,
-      #feedbackForm textarea {
-        padding: 8px;
-        border: 1px solid #aaa;
-        border-radius: 4px;
-        font-size: 14px;
-      }
-      #feedbackForm button {
-        padding: 10px;
-        background-color: #16a34a;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 15px;
-      }
-      table {
-        margin: auto;
-        width: 100%;
-      }
-      nav a {
-        margin-right: 12px;
-        text-decoration: none;
-        color: #2563eb;
-        font-weight: 500;
-      }
-      nav {
-        padding: 10px;
-        background: #f0f0f0;
-        border-bottom: 1px solid #ccc;
-      }
-      footer {
-        background: #222;
-        color: #eee;
-        text-align: center;
-        padding: 16px;
-        margin-top: 30px;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <nav>
-      <a href="#">Home</a>
-      <a href="#events">Events</a>
-      <a href="#contacts">Contacts</a>
-      <a href="/help.html" target="_blank">Help</a>
+      <ul class="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#news">Bulletin</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+        <li><a href="/help.html" target="_blank">Help</a></li>
+      </ul>
     </nav>
     <main>
       <div id="welcomeBanner">
-        Welcome back, <span style="color: red; font-weight: bold">John!</span>
-        <span class="highlight">Special Offer: Free entry this weekend!</span>
+        Welcome back,
+        <span class="username">Elangovan!</span>
       </div>
       <section id="events">
         <h2>Community Event Gallery</h2>
@@ -130,7 +33,7 @@
           </caption>
           <tr>
             <td>
-              <figure>
+              <figure class="eventCard">
                 <img
                   src="/images/img1.jpg"
                   class="gallery"
@@ -142,7 +45,7 @@
               </figure>
             </td>
             <td>
-              <figure>
+              <figure class="eventCard">
                 <img
                   src="/images/img2.jpg"
                   class="gallery"
@@ -154,7 +57,7 @@
               </figure>
             </td>
             <td>
-              <figure>
+              <figure class="eventCard">
                 <img
                   src="/images/img3.jpg"
                   class="gallery"
@@ -168,7 +71,7 @@
           </tr>
           <tr>
             <td>
-              <figure>
+              <figure class="eventCard">
                 <img
                   src="/images/img4.jpg"
                   class="gallery"
@@ -180,7 +83,7 @@
               </figure>
             </td>
             <td>
-              <figure>
+              <figure class="eventCard">
                 <img
                   src="/images/img5.jpg"
                   class="gallery"
@@ -192,7 +95,7 @@
               </figure>
             </td>
             <td>
-              <figure>
+              <figure class="eventCard">
                 <img
                   src="/images/img6.jpg"
                   class="gallery"
@@ -206,8 +109,73 @@
           </tr>
         </table>
       </section>
+      <hr />
+      <section id="admin">
+        <h3>Events Admin Table</h3>
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Food Festival</td>
+              <td>Jun 12</td>
+              <td>Central Park</td>
+              <td>Open</td>
+            </tr>
+            <tr>
+              <td>City Marathon</td>
+              <td>Jul 02</td>
+              <td>Riverside</td>
+              <td>Open</td>
+            </tr>
+            <tr>
+              <td>Tech Workshop</td>
+              <td>Aug 19</td>
+              <td>Civic Hall</td>
+              <td>Waitlist</td>
+            </tr>
+            <tr>
+              <td>Clean Up Drive</td>
+              <td>Sep 07</td>
+              <td>Old Town</td>
+              <td>Closed</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <hr />
+      <section id="news">
+        <h3>Community Bulletin</h3>
+        <div class="news-article">
+          <p>
+            The city council announces a new weekend market pilot to support
+            local artisans and small businesses. Residents can expect rotating
+            vendors, food stalls, and music performances across three weekends.
+            Volunteers are invited to assist with setup and visitor guidance.
+            Sign up early to secure a preferred time slot.
+          </p>
+          <p>
+            A neighborhood tree-planting drive will launch next month to improve
+            street shade and air quality. Families are encouraged to join, and
+            each participant receives a starter kit with gloves, tools, and care
+            instructions for saplings.
+          </p>
+        </div>
+        <ul class="bullet-list">
+          <li>Market pilot runs every Saturday, 4 PM to 9 PM.</li>
+          <li>Volunteer check-in opens one hour before event start.</li>
+          <li>Tree-planting drive registration closes in two weeks.</li>
+        </ul>
+      </section>
+      <hr />
       <div>
-        <h3>Event Registration</h3>
+        <h3 class="form-heading">Event Registration</h3>
         <form id="registrationForm" onsubmit="registerCheck(event)">
           <label for="Name">Name</label>
           <input
@@ -256,16 +224,18 @@
           ></output>
         </form>
       </div>
+      <hr />
       <div>
         <h3>Event Feedback</h3>
-        <form id="feedbackForm">
+        <form id="feedbackForm" onsubmit="confirmFeedback(event)">
           <label for="phone">Phone Number</label>
           <input
-            type="tel"
+            type="number"
             id="phone"
             placeholder="Enter your 10-digit phone number"
             onblur="validatePhone(this)"
             oninput="contentAvailable()"
+            autofocus
             required
           />
           <label for="event-type1">Event Type</label>
@@ -290,12 +260,11 @@
             oninput="contentAvailable()"
           ></textarea>
           <p id="charCount">Characters: 0</p>
-          <button type="button" onclick="confirmFeedback()">
-            Submit Feedback
-          </button>
-          <h3 id="feedbackReply"></h3>
+          <button type="submit">Submit Feedback</button>
+          <h4 id="feedbackReply"></h4>
         </form>
       </div>
+      <hr />
       <div>
         <h3>Event Promo Video</h3>
         <video oncanplay="videoReady()" controls width="400">
@@ -304,10 +273,10 @@
         </video>
         <p id="videoStatus"></p>
       </div>
-      <div>
+      <div class="action-buttons">
         <button onclick="clearPreferences()">Clear Preferences</button>
       </div>
-      <div>
+      <div class="action-buttons">
         <h3>Find Nearby Events</h3>
         <button onclick="findLocation()">Find Nearby Events</button>
         <p id="locationOutput"></p>
@@ -357,7 +326,8 @@
         document.getElementById("charCount").innerText =
           "Characters: " + feedback.length;
       }
-      function confirmFeedback() {
+      function confirmFeedback(event) {
+        event.preventDefault();
         console.log("Feedback submitted");
         let reply = document.getElementById("feedbackReply");
         reply.innerText = "Feedback submitted successfully! Thank you.";
