@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Local Community Event Portal</title>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Primary site navigation -->
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#news">Bulletin</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+        <li><a href="/help.html" target="_blank">Help</a></li>
+      </ul>
+    </nav>
+    <main>
+      <!-- Greeting banner -->
+      <div id="welcomeBanner">
+        Welcome back,
+        <span class="username">Elangovan!</span>
+      </div>
+      <!-- Interactive event portal UI -->
+      <section id="portal">
+        <div class="portal-hero">
+          <p class="portal-tag">Local Community Event Portal</p>
+          <h1>Discover, Register, and Share Community Moments</h1>
+          <p class="portal-subtitle">
+            Filter by category or location, search by name, and reserve seats
+            instantly.
+          </p>
+        </div>
+        <div class="portal-controls">
+          <div class="control-group">
+            <label for="categoryFilter">Category</label>
+            <select id="categoryFilter" onchange="handleCategoryChange()">
+              <option value="all">All Categories</option>
+              <option value="music">Music</option>
+              <option value="sports">Sports</option>
+              <option value="workshop">Workshop</option>
+              <option value="community">Community</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="locationFilter">Location</label>
+            <select id="locationFilter">
+              <option value="all">All Locations</option>
+              <option value="central park">Central Park</option>
+              <option value="riverside">Riverside</option>
+              <option value="civic hall">Civic Hall</option>
+              <option value="old town">Old Town</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="searchInput">Quick Search</label>
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Type a name and press Enter"
+            />
+          </div>
+        </div>
+        <div id="loadingSpinner" class="spinner hidden" aria-live="polite">
+          Loading events...
+        </div>
+        <div id="eventList" class="event-grid"></div>
+        <div id="eventSummary" class="event-summary"></div>
+      </section>
+      <!-- Photo gallery table -->
+      <section id="events">
+        <h2>Community Event Gallery</h2>
+        <table border="1">
+          <caption>
+            Photos from Past Community Events
+          </caption>
+          <tr>
+            <td>
+              <figure class="eventCard">
+                <img
+                  src="/images/img1.jpg"
+                  class="gallery"
+                  alt="Annual Food Festival 2023"
+                  title="Annual Food Festival"
+                  ondblclick="toggleEnlarge(this)"
+                />
+                <figcaption>Annual Food Festival 2023</figcaption>
+              </figure>
+            </td>
+            <td>
+              <figure class="eventCard">
+                <img
+                  src="/images/img2.jpg"
+                  class="gallery"
+                  alt="City Marathon 2023"
+                  title="City Marathon"
+                  ondblclick="toggleEnlarge(this)"
+                />
+                <figcaption>City Marathon 2023</figcaption>
+              </figure>
+            </td>
+            <td>
+              <figure class="eventCard">
+                <img
+                  src="/images/img3.jpg"
+                  class="gallery"
+                  alt="Tech Workshop April"
+                  title="Tech Workshop"
+                  ondblclick="toggleEnlarge(this)"
+                />
+                <figcaption>Tech Workshop April</figcaption>
+              </figure>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <figure class="eventCard">
+                <img
+                  src="/images/img4.jpg"
+                  class="gallery"
+                  alt="Youth Sports Day 2023"
+                  title="Youth Sports Day"
+                  ondblclick="toggleEnlarge(this)"
+                />
+                <figcaption>Youth Sports Day 2023</figcaption>
+              </figure>
+            </td>
+            <td>
+              <figure class="eventCard">
+                <img
+                  src="/images/img5.jpg"
+                  class="gallery"
+                  alt="Cultural Dance Evening"
+                  title="Cultural Dance Evening"
+                  ondblclick="toggleEnlarge(this)"
+                />
+                <figcaption>Cultural Dance Evening</figcaption>
+              </figure>
+            </td>
+            <td>
+              <figure class="eventCard">
+                <img
+                  src="/images/img6.jpg"
+                  class="gallery"
+                  alt="Community Clean Up Drive"
+                  title="Clean Up Drive"
+                  ondblclick="toggleEnlarge(this)"
+                />
+                <figcaption>Community Clean Up Drive</figcaption>
+              </figure>
+            </td>
+          </tr>
+        </table>
+      </section>
+      <hr />
+      <!-- Admin status table -->
+      <section id="admin">
+        <h3>Events Admin Table</h3>
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Food Festival</td>
+              <td>Jun 12</td>
+              <td>Central Park</td>
+              <td>Open</td>
+            </tr>
+            <tr>
+              <td>City Marathon</td>
+              <td>Jul 02</td>
+              <td>Riverside</td>
+              <td>Open</td>
+            </tr>
+            <tr>
+              <td>Tech Workshop</td>
+              <td>Aug 19</td>
+              <td>Civic Hall</td>
+              <td>Waitlist</td>
+            </tr>
+            <tr>
+              <td>Clean Up Drive</td>
+              <td>Sep 07</td>
+              <td>Old Town</td>
+              <td>Closed</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <hr />
+      <!-- Community bulletin feed -->
+      <section id="news">
+        <h3>Community Bulletin</h3>
+        <div class="news-article">
+          <p>
+            The city council announces a new weekend market pilot to support
+            local artisans and small businesses. Residents can expect rotating
+            vendors, food stalls, and music performances across three weekends.
+            Volunteers are invited to assist with setup and visitor guidance.
+            Sign up early to secure a preferred time slot.
+          </p>
+          <p>
+            A neighborhood tree-planting drive will launch next month to improve
+            street shade and air quality. Families are encouraged to join, and
+            each participant receives a starter kit with gloves, tools, and care
+            instructions for saplings.
+          </p>
+        </div>
+        <ul class="bullet-list">
+          <li>Market pilot runs every Saturday, 4 PM to 9 PM.</li>
+          <li>Volunteer check-in opens one hour before event start.</li>
+          <li>Tree-planting drive registration closes in two weeks.</li>
+        </ul>
+      </section>
+      <hr />
+      <!-- Registration form -->
+      <div>
+        <h3 class="form-heading">Event Registration</h3>
+        <form id="registrationForm" onsubmit="registerCheck(event)">
+          <label for="Name">Name</label>
+          <input
+            type="text"
+            id="Name"
+            name="Name"
+            placeholder="Enter your name"
+            autofocus
+            required
+            oninput="contentAvailable()"
+          />
+          <small class="error" id="nameError"></small>
+          <label for="Email">Email</label>
+          <input
+            type="email"
+            id="Email"
+            name="Email"
+            placeholder="Enter your email"
+            required
+            oninput="contentAvailable()"
+          />
+          <small class="error" id="emailError"></small>
+          <label for="date">Date</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            required
+            oninput="contentAvailable()"
+          />
+          <label for="event-type">Event Type</label>
+          <select
+            id="event-type"
+            name="event-type"
+            onchange="storePreference()"
+            required
+            oninput="contentAvailable()"
+          >
+            <option value="">Select an option</option>
+            <option value="conference">Conference</option>
+            <option value="workshop">Workshop</option>
+            <option value="seminar">Seminar</option>
+          </select>
+          <small class="error" id="typeError"></small>
+          <label for="selectedEvent">Select Event</label>
+          <select
+            id="selectedEvent"
+            name="selectedEvent"
+            required
+            oninput="contentAvailable()"
+          >
+            <option value="">Choose an event</option>
+          </select>
+          <small class="error" id="eventError"></small>
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Enter your message"
+            required
+            oninput="contentAvailable()"
+          ></textarea>
+          <button
+            id="registerBtn"
+            type="submit"
+            onclick="console.log('Submit button clicked')"
+          >
+            Submit
+          </button>
+          <output
+            id="regOutput"
+            for="Name Email date event-type message"
+          ></output>
+          <p id="formMessage" class="form-message"></p>
+        </form>
+      </div>
+      <hr />
+      <!-- Feedback form -->
+      <div>
+        <h3>Event Feedback</h3>
+        <form id="feedbackForm" onsubmit="confirmFeedback(event)">
+          <label for="phone">Phone Number</label>
+          <input
+            type="number"
+            id="phone"
+            placeholder="Enter your 10-digit phone number"
+            onblur="validatePhone(this)"
+            oninput="contentAvailable()"
+            autofocus
+            required
+          />
+          <label for="event-type1">Event Type</label>
+          <select
+            id="event-type1"
+            onchange="showFee(this)"
+            oninput="contentAvailable()"
+            required
+          >
+            <option value="">Select an option</option>
+            <option value="conference">Conference</option>
+            <option value="workshop">Workshop</option>
+            <option value="seminar">Seminar</option>
+          </select>
+          <p id="fee"></p>
+          <label for="feedbackText">Feedback</label>
+          <textarea
+            id="feedbackText"
+            placeholder="Write your feedback..."
+            onkeydown="countCharacters()"
+            onkeyup="countCharacters()"
+            oninput="contentAvailable()"
+          ></textarea>
+          <p id="charCount">Characters: 0</p>
+          <button type="submit">Submit Feedback</button>
+          <h4 id="feedbackReply"></h4>
+        </form>
+      </div>
+      <hr />
+      <!-- Promo video block -->
+      <div>
+        <h3>Event Promo Video</h3>
+        <video oncanplay="videoReady()" controls width="400">
+          <source src="/videos/promo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p id="videoStatus"></p>
+      </div>
+      <!-- Quick actions -->
+      <div class="action-buttons">
+        <button onclick="clearPreferences()">Clear Preferences</button>
+      </div>
+      <!-- Geolocation helper -->
+      <div class="action-buttons">
+        <h3>Find Nearby Events</h3>
+        <button onclick="findLocation()">Find Nearby Events</button>
+        <p id="locationOutput"></p>
+      </div>
+      <!-- Contact information -->
+      <section id="contacts">
+        <h2>Contact Us</h2>
+        <p>Email: citycouncil@community.gov</p>
+        <p>Phone: 044-1234-5678</p>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Local Community Event Portal. All rights reserved.</p>
+    </footer>
+    <!-- Script dependencies -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Portal logic -->
+    <script src="main.js"></script>
+  </body>
+</html>

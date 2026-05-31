@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Event Registration</title>
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Event Registration Form</h2>
+
+    <form id="registrationForm">
+      <label>Name:</label>
+      <input type="text" name="name" />
+      <span id="nameError" class="error"></span>
+
+      <br /><br />
+
+      <label>Email:</label>
+      <input type="email" name="email" />
+      <span id="emailError" class="error"></span>
+
+      <br /><br />
+
+      <label>Event:</label>
+      <select name="event">
+        <option value="">Select Event</option>
+        <option value="Music Fest">Music Fest</option>
+        <option value="Baking Workshop">Baking Workshop</option>
+        <option value="Tech Talk">Tech Talk</option>
+      </select>
+      <span id="eventError" class="error"></span>
+
+      <br /><br />
+
+      <button type="submit">Register</button>
+    </form>
+
+    <script src="ex-11.js"></script>
+  </body>
+</html>
