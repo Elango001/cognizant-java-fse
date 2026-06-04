@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Badge Overlay Example</title>
+
+    <link
+      rel="stylesheet"
+      href="/Bootstrap/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <h1 class="text-center text-primary mb-4">Image Badge Overlay</h1>
+
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="position-relative d-inline-block">
+            <img
+              src="/images/img1.jpg"
+              class="img-fluid rounded shadow"
+              alt="Product Image"
+            />
+
+            <!-- Badge -->
+            <span
+              class="badge bg-danger position-absolute top-0 start-100 translate-middle"
+            >
+              New
+            </span>
+          </div>
+
+          <div class="card mt-3">
+            <div class="card-body text-center">
+              <h4>Sample Product</h4>
+
+              <p>
+                The badge is positioned on top of the image using Bootstrap
+                positioning utilities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/Bootstrap/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

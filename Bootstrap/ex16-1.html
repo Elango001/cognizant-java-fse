@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixed Footer</title>
+
+    <link
+      rel="stylesheet"
+      href="/Bootstrap/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center text-primary">Fixed Footer Example</h1>
+
+      <p class="text-center">
+        Scroll the page and notice that the footer remains fixed at the bottom.
+      </p>
+
+      <div class="card mt-4">
+        <div class="card-body">
+          <h3>Sample Content</h3>
+
+          <p>This page demonstrates Bootstrap positioning utilities.</p>
+
+          <p>
+            The footer uses <strong>position-fixed</strong> and
+            <strong>bottom-0</strong> classes.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer
+      class="position-fixed bottom-0 start-0 w-100 bg-dark text-white text-center p-3"
+    >
+      Copyright © 2026 My Website
+    </footer>
+
+    <script src="/Bootstrap/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

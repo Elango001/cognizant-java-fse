@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Column Reordering</title>
+
+    <link
+      rel="stylesheet"
+      href="/Bootstrap/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center text-primary mb-4">Bootstrap Column Reordering</h1>
+
+      <div class="row">
+        <!-- First Column -->
+        <div class="col-md-6 order-md-2">
+          <div class="card">
+            <div class="card-body bg-success text-white text-center">
+              <h3>Column 1</h3>
+
+              <p>This column appears second on medium screens and above.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Column -->
+        <div class="col-md-6 order-md-1">
+          <div class="card">
+            <div class="card-body bg-primary text-white text-center">
+              <h3>Column 2</h3>
+
+              <p>This column appears first on medium screens and above.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/Bootstrap/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

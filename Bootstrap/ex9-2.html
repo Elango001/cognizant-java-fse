@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Groups and Toggle Buttons</title>
+
+    <link
+      rel="stylesheet"
+      href="/Bootstrap/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center text-primary mb-4">
+        Button Groups and Toggle Buttons
+      </h1>
+
+      <!-- Button Group -->
+      <div class="card mb-4">
+        <div class="card-header bg-primary text-white">Button Group</div>
+
+        <div class="card-body text-center">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-outline-primary">Home</button>
+
+            <button type="button" class="btn btn-outline-primary">About</button>
+
+            <button type="button" class="btn btn-outline-primary">
+              Contact
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toggle Buttons -->
+      <div class="card">
+        <div class="card-header bg-success text-white">Toggle Buttons</div>
+
+        <div class="card-body text-center">
+          <input type="checkbox" class="btn-check" id="html" />
+
+          <label class="btn btn-outline-primary m-1" for="html"> HTML </label>
+
+          <input type="checkbox" class="btn-check" id="css" />
+
+          <label class="btn btn-outline-success m-1" for="css"> CSS </label>
+
+          <input type="checkbox" class="btn-check" id="bootstrap" />
+
+          <label class="btn btn-outline-danger m-1" for="bootstrap">
+            Bootstrap
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <script src="/Bootstrap/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

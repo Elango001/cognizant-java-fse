@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Flex Navbar</title>
+
+    <link
+      rel="stylesheet"
+      href="/Bootstrap/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <nav class="bg-dark p-3">
+      <div class="container">
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center"
+        >
+          <h2 class="text-white mb-3 mb-md-0">MyWebsite</h2>
+
+          <div class="d-flex flex-column flex-md-row">
+            <a href="#" class="btn btn-outline-light me-md-2 mb-2 mb-md-0">
+              Home
+            </a>
+
+            <a href="#" class="btn btn-outline-light me-md-2 mb-2 mb-md-0">
+              About
+            </a>
+
+            <a href="#" class="btn btn-outline-light me-md-2 mb-2 mb-md-0">
+              Services
+            </a>
+
+            <a href="#" class="btn btn-outline-light"> Contact </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-body text-center">
+          <h3>Responsive Navigation Bar</h3>
+
+          <p>
+            The navbar becomes vertical on small screens and horizontal on
+            medium screens and larger.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="/Bootstrap/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
